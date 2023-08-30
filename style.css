@@ -1,0 +1,669 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+  
+:root {
+  --bg-color: #0c1c3f;
+  --second-bg-color: #1e2d61;
+  --text-color: #ffffff;
+  --main-color: gold;
+}
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;   
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Code for the index/home page */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: #09273d;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s*var(--i)) ;
+}
+
+.navbar a:hover,
+.navbar a:active {
+    color: var(--main-color);
+    color: #0ef;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    background-color: var(--second-bg-color);
+}
+
+.home-content {
+    width: 50%;
+}
+
+.intro {
+    margin-bottom: 2rem;
+}
+
+.intro h3,
+.intro h1,
+.intro h3 span {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.home-content h3{
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+}
+.intro h1 {
+    font-size: 3.5rem;
+}
+
+.home p {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.home .social-media {
+    margin-top: 1rem;
+}
+
+.home .social-media a {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: var(--main-color);
+}
+
+.home .home-img {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home-img img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 4px solid var(--main-color);
+  margin-right: 20px;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+  animation-delay: 2s, 3s;
+}
+
+
+.home-content h3 span{
+  color: #0ef;
+}
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.home-content h3:nth-of-type(2){
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: .7s;
+
+}
+.home-content p{
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: .7s;
+
+}
+.social-media a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  margin: 30px 15px 30px 0 ;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s*var(--i));
+}
+
+.social-media a:hover{
+ background: #0ef;
+ color: rgb(22, 9, 94); 
+ box-shadow: 0 0 20px #0ef;
+}
+
+.btn{
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgb(14, 52, 150);
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: rgb(22, 9, 94); 
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes slideRight{
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop{
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom{
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft{
+  0%{
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+/* Additional styles for the About page */
+.experience {
+  background-color: var(--second-bg-color);
+  color: var(--text-color);
+  padding: 14rem 2rem;
+  font-size: 2rem;
+}
+
+.certifications {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 3rem 2rem;
+  margin-top: -12rem;
+}
+
+.leadership-section{
+  background-color: var(--second-bg-color);
+  color: var(--text-color);
+  padding: 3rem 2rem;
+}
+
+/* Additional styles for the headings */
+.experience h2,
+.certifications h2,
+.leadership-section h2 {
+  color: var(--main-color); /* Use a different secondary color */
+  font-size: 3.7rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Additional styles for the sections */
+.experience-item {
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--main-color); /* Add a left border for visual separation */
+  padding-left: 1rem;
+}
+
+.certifications ul,
+.leadership-section ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  font-size: 2rem;
+  line-height: 1.6;
+}
+
+
+@media screen and (max-width: 768px) {
+  .experience,
+  .certifications,
+  .leadership-section {
+      padding: 2rem 0;
+  }
+}
+
+
+.image-grid {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 3rem 0;
+}
+
+.image-grid h2 {
+  color: var(--main-color);
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1rem;
+  justify-items: center;
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+
+
+/* Additional styles for the Skills page */
+.skills {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.skills h2 {
+  color: var(--main-color);
+  font-size: 3.7rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.skill-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  width: 220px;
+  padding: 4rem;
+  background-color: var(--second-bg-color);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.skill-card i {
+  font-size: 4rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+@media screen and (max-width: 768px) {
+  .skills {
+    padding: 2rem 0;
+  }
+}
+
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 171, 240, 0.3); /* AI-vibe color overlay */
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+/* Education */
+
+
+
+.education {
+  text-align: center;
+  padding: 9rem 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.education h2 {
+  color: var(--main-color);
+  font-size: 3.7rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  justify-items: center;
+  position: relative;
+  margin-top: 90px;
+}
+
+.education-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: var(--second-bg-color);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.education-item i {
+  font-size: 4rem;
+  color: var(--main-color);
+}
+
+.education-item h2, .education-item h3, .education-item h5, .education-item p {
+  margin: 0;
+  color: var(--text-color);
+  font-size: x-large;
+}
+
+.graduation {
+  grid-column: 2 / span 1;
+  grid-row: 1;
+  align-self: center;
+  z-index: 2;
+  transform: translateY(-20%);
+  color: var(--text-color); /* Change color to match other tiles */
+  background-color: var(--second-bg-color); /* Change color to match other tiles */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional styles for the Contact page */
+.contact {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 8% 9%;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  background-image: url('background-image.jpg');
+  background-position: center;
+  background-size: cover;
+  font-size: large;
+}
+
+.contact-form {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.contact-form h2 {
+  color: var(--main-color);
+  font-size: 3.7rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+}
+
+.input-group textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 1rem 2rem;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 4px;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0ef; /* Hover color */
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+      padding: 5% 6%;
+      font-size: 1.2rem;
+  }
+
+  .contact-form {
+      padding: 2rem;
+  }
+}
+
+.footer{
+  background-color: black;
+  font-size: large;
+}
+
+/*project*/
+/* Add this CSS to your existing style.css file */
+
+/* Projects page styles */
+.projects {
+  padding: 8% 9%;
+  background: linear-gradient(to bottom right, var(--second-bg-color), var(--bg-color));
+  color: var(--text-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projects h2 {
+  font-size: 3.7rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  width: 100%;
+  color :aqua;
+}
+
+.project {
+  width: calc(50% - 1rem);
+  margin-bottom : 3rem;
+  padding: 2rem;
+  background-color: var(--second-bg-color);
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.project h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.project p {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.project .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.project .btn:hover {
+  background-color: #0ef;
+}
+
+@media screen and (max-width: 768px) {
+  .projects {
+      padding: 4rem 9%;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .project {
+      width: 100%;
+      padding: 1.5rem;
+  }
+}
+
+
